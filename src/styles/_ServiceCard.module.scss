@@ -1,0 +1,42 @@
+// _ServiceCard.module.scss
+
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+@use "./variables/mediaQuery" as *;
+
+$icon-size: 12.375rem;
+h2{
+  color:$white-1;
+  font-family: "Montserrat-Bold";
+      text-transform: capitalize;
+      &.ar {
+        font-family: "Cairo-Bold";
+      }
+}
+.card {
+  @include flex-variant(flex, $direction: column, $gap: 1.875rem); // Displaying elements in a column layout
+  align-items: center; // Aligning items in the center horizontally
+  .icon {
+    width: $icon-size;
+    height: $icon-size;
+    padding: 2.5625rem;
+    background-color: $yellow-1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .details {
+    .title {
+      margin-bottom: 1.25rem;
+      color: $white-1; // Set title color to white
+      font-family: "Montserrat-Bold";
+      text-transform: capitalize;
+      &.ar {
+        font-family: "Cairo-Bold";
+      }
+    }
+  }
+}

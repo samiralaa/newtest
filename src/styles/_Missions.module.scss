@@ -1,0 +1,34 @@
+@use "./mixins" as *;
+@use "./variables/global" as *;
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+$gap: 4.375rem;
+.missions {
+  width: 100%;
+  padding: $sectionPadding;
+  background-color: $grey-2;
+  .missionsList {
+    @include flex-variant(
+      flex,
+      $direction: row,
+      $justify: space-between,
+      $align: center,
+      $gap: 3.125rem,
+      $wrap: wrap
+    );
+    li {
+      width: 100%;
+      @include mediaQuery($smallScreen_min_width) {
+        & {
+          width: calc((100% - $gap) / 2);
+        }
+      }
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          width: calc((100% - (2 * $gap)) / 3);
+          flex-wrap: nowrap;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "./variables/colors" as *;
+@use "./variables/global" as *;
+.services {
+  padding: $sectionPadding;
+  position: relative;
+  background-color: $grey-4;
+  .vectorWrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .vector {
+      min-height: 51.5625rem;
+      position: relative;
+      left: 0;
+      top: 100%;
+      transform: translateY(-100%);
+      overflow-x: clip;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.2;
+        object-fit: cover;
+      }
+    }
+  }
+}

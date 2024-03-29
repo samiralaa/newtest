@@ -1,0 +1,127 @@
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+@use "./variables/global" as *;
+@use "./variables/mediaQuery" as *;
+@use "./placeholders" as *;
+$gap: 2.875rem;
+.categoryItems {
+  .head {
+    @extend %head;
+    .contents {
+      @extend %contents;
+      .wrapper {
+        @extend %categoryWrapper;
+        .items {
+          @extend %categoryItems;
+          .projectHead {
+            @extend %projectHead;
+            img {
+              @extend %projectHeadImg;
+            }
+            &::before {
+              @extend %projectHeadOverlay;
+            }
+          }
+          .categories {
+            @include flex-variant(
+              flex,
+              $direction: row,
+              $align: center,
+              $wrap: wrap,
+              $gap: $gap
+            );
+            .category {
+              width: 100%;
+              @include flex-variant(
+                flex,
+                $direction: column,
+                $align: center,
+                $gap: 0.75rem
+              );
+              @include mediaQuery($smallScreen_min_width) {
+                & {
+                  width: calc((100% - $gap) / 2);
+                }
+              }
+              @include mediaQuery($medScreen_min_width) {
+                & {
+                  width: calc((100% - ($gap * 2)) / 3);
+                }
+              }
+              @include mediaQuery($largeScreen_min_width) {
+                & {
+                  width: calc((100% - ($gap * 3)) / 4);
+                }
+              }
+              &:hover {
+                img {
+                  scale: 1.1;
+                }
+              }
+              .img {
+                width: 100%;
+                height: 17.9375rem;
+                position: relative;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                &::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 99;
+                  background-image: $cardOverlay;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  transition: $tr-1;
+                }
+              }
+              .title {
+                color: $black-5;
+                font-size: 1.25rem;
+                font-family: "Montserrat-SemiBold";
+                text-transform: capitalize;
+                &.ar {
+                  font-family: "Cairo-SemiBold";
+                }
+              }
+            }
+          }
+          .loadMore {
+            width: 45%;
+            padding: 0.9375rem 1.5rem;
+            display: block;
+            margin: $gap auto 0 auto;
+            background-color: $yellow-1;
+            color: $white-1;
+            font-size: 1rem;
+            font-family: "Montserrat-Medium";
+            text-transform: uppercase;
+            transition: $tr-1;
+            &:hover {
+              background-color: $yellow-2;
+            }
+            &.ar {
+              font-family: "Cairo-Medium";
+            }
+            @include mediaQuery($smallScreen_min_width) {
+              width: 30%;
+            }
+            @include mediaQuery($medScreen_min_width) {
+              width: 22%;
+            }
+            @include mediaQuery($largeScreen_min_width) {
+              width: 18%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

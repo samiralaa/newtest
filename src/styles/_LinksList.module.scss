@@ -1,0 +1,109 @@
+@use "./mixins" as *;
+@use "./variables/global" as *;
+@use "./fonts" as *;
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+.wrapper {
+  @include flex-variant(
+    flex,
+    $direction: row,
+    $align: center,
+    $justify: space-between,
+    $gap: 1.75rem
+  );
+  @include mediaQuery($medScreen_max_width) {
+    & {
+      @include flex-variant(
+        flex,
+        $direction: column,
+        $align: center,
+        $justify: space-between,
+        $gap: 1.75rem
+      );
+    }
+  }
+  .links {
+    @include flex-variant(
+      flex,
+      $direction: row,
+      $align: center,
+      $justify: space-between,
+      $gap: 2.125rem
+    );
+    position: relative;
+    @include mediaQuery($medScreen_max_width) {
+      & {
+        @include flex-variant(
+          flex,
+          $direction: column,
+          $align: center,
+          $justify: space-between,
+          $gap: 2.125rem
+        );
+        &::after {
+          display: none;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      width: 0.05rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -1.25rem;
+      background-color: $grey-1;
+    }
+    &.ar {
+      &::after {
+        left: -1.25rem;
+        right: initial;
+      }
+      li {
+        a {
+          font-family: "Cairo-Regular";
+          &.active {
+            font-family: "Cairo-Bold";
+          }
+        }
+      }
+    }
+    li {
+      a {
+        @include flex-row-center();
+        color: $black-2;
+        font-size: 1.1875rem;
+        font-family: "DMSans-Regular";
+        text-transform: capitalize;
+        transition: $tr-1;
+        &.active {
+          font-family: "DMSans-Bold";
+        }
+        &:hover {
+          color: $yellow-1;
+        }
+      }
+    }
+  }
+  .contactBtn {
+    padding: 0.9375rem 1.5rem;
+    background-color: $yellow-1;
+    color: $white-1;
+    font-size: 1rem;
+    font-family: "Montserrat-Medium";
+    text-transform: uppercase;
+    text-align: center;
+    transition: $tr-1;
+    &:hover {
+      background-color: $yellow-2;
+    }
+    &.ar {
+      font-family: "Cairo-Medium";
+    }
+  }
+  .languagButton {
+    font-size: 1rem;
+    font-family: "Montserrat-Medium";
+    text-transform: uppercase;
+  }
+}

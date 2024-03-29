@@ -1,0 +1,188 @@
+@use "./variables/global" as *;
+@use "./variables/mediaQuery" as *;
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./placeholders" as *;
+.about {
+  .head {
+    @extend %head;
+    .contents {
+      @extend %contents;
+      .wrapper {
+        @extend %wrapper;
+        .details {
+          width: 100%;
+          @include flex-variant(
+            flex,
+            $direction: column,
+            $align: center,
+            $gap: $gap
+          );
+          @include mediaQuery($largeScreen_min_width) {
+            & {
+              @include flex-variant(
+                flex,
+                $direction: row,
+                $align: center,
+                $justify: space-between,
+                $gap: $gap
+              );
+            }
+          }
+          .logo {
+            width: calc((100% - $gap) / 3);
+            @include flex-row-center();
+            @include mediaQuery($largeScreen_min_width) {
+              & {
+                display: block !important;
+              }
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              @include mediaQuery($smallScreen_min_width) {
+                & {
+                  width: 75%;
+                }
+              }
+              @include mediaQuery($largeScreen_min_width) {
+                & {
+                  width: 55%;
+                }
+              }
+            }
+          }
+          .text {
+            width: 100%;
+            @include flex-variant(flex, $direction: column, $gap: 1.125rem);
+            @include mediaQuery($smallScreen_min_width) {
+              & {
+                width: calc(((100% - $gap) / 3) * 2);
+              }
+            }
+            .header {
+              color: $black-2;
+              font-size: 3.6875rem;
+              font-family: "Montserrat-Bold";
+              text-transform: capitalize;
+              text-align: center;
+              &.ar {
+                font-family: "Cairo-Bold";
+              }
+              @include mediaQuery($largeScreen_min_width) {
+                & {
+                  text-align: start;
+                }
+              }
+            }
+            .history {
+              color: $grey-7;
+              font-family: "Montserrat-SemiBold";
+              line-height: 2rem;
+              text-align: center;
+              &.ar {
+                font-family: "Cairo-SemiBold";
+              }
+              @include mediaQuery($largeScreen_min_width) {
+                & {
+                  text-align: start;
+                }
+              }
+            }
+            .icons {
+              @include flex-variant(
+                flex,
+                $direction: row,
+                $align: center,
+                $justify: center,
+                $gap: 2.375rem,
+                $wrap: wrap
+              );
+              @include mediaQuery($smallScreen_min_width) {
+                & {
+                  flex-wrap: nowrap;
+                }
+              }
+              @include mediaQuery($largeScreen_min_width) {
+                & {
+                  gap: 4.375rem;
+                  justify-content: flex-start;
+                }
+              }
+              .icon {
+                width: 9.4375rem;
+                height: 8.25rem;
+                width: 7.4375rem;
+                height: 6.25rem;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .missionsList {
+    background-color: transparent;
+  }
+  .services {
+    .title {
+      @include flex-row-center();
+      background-color: $grey-8;
+      padding: 2.8125rem;
+      .text {
+        margin: 0;
+        color: black;
+      }
+    }
+    .servicesWrapper {
+      padding: $sectionPadding;
+      .servicesList {
+        @include flex-variant(
+          flex,
+          
+         
+          $wrap: wrap
+        );
+        li {
+          color: $grey-9;
+          width: 100%;
+        }
+        > li {
+          width: 100%;
+          @include mediaQuery($medScreen_min_width) {
+            & {
+              width: calc((100% - 3.25rem) / 2);
+            }
+          }
+          .service {
+            @include flex-variant(
+              flex,
+              $direction: column,
+              $align: center,
+              $gap: 1.875rem
+            );
+
+            @include mediaQuery($medScreen_min_width) {
+              & {
+                @include flex-variant(
+                  flex,
+                  $align: flex-start,
+                 
+                );
+              }
+            }
+            h2 {
+              color: $black-4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use "./variables/global" as *;
+@use "./variables/mediaQuery" as *;
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./placeholders" as *;
+.projects {
+  .head {
+    @extend %head;
+    .contents {
+      @extend %contents;
+      .wrapper {
+        @extend %wrapper;
+        .categories {
+          @include flex-variant(
+            flex,
+            $direction: column,
+            $align: center,
+            $gap: 6.625rem
+          );
+          @include mediaQuery($largeScreen_min_width) {
+            & {
+              @include flex-variant(
+                flex,
+                $direction: row,
+                $align: center,
+                $gap: 8.625rem
+              );
+            }
+          }
+          .card {
+            width: 24.4375rem;
+            height: 28.125rem;
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            &::before {
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 99;
+              background-image: $cardOverlay;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              transition: $tr-1;
+            }
+            .title {
+              position: absolute;
+              bottom: 2rem;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 999;
+              color: $white-1;
+              font-size: 3.1875rem;
+              font-family: "Montserrat-Bold";
+              text-transform: capitalize;
+              text-align: center;
+              &.ar {
+                font-family: "Cairo-Bold";
+              }
+            }
+            &:hover {
+              img {
+                transform: scale(1.5) rotate(-5deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

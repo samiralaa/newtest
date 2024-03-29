@@ -1,0 +1,84 @@
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+@use "./variables/global" as *;
+@use "./variables/mediaQuery" as *;
+@use "./placeholders" as *;
+
+.category {
+  .head {
+    @extend %head;
+    .contents {
+      @extend %contents;
+      .wrapper {
+        @extend %wrapper;
+        .categories {
+          @include flex-variant(
+            flex,
+            $direction: row,
+            $align: center,
+            $wrap: wrap,
+            $gap: $gap
+          );
+          
+      /* _Category.module.scss */
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .product {
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      margin-top: 5cm;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .details {
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #27ae60; /* Green color for price */
+    }
+
+    .scope {
+      font-size: 1rem;
+      color: #777;
+    }
+  }
+}
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+.head {
+  margin-bottom: 2.8125rem;
+  font-size: 2.125rem;
+  font-family: "Montserrat-Bold";
+  color: $white-1;
+  text-transform: capitalize;
+  &.ar {
+    font-family: "Cairo-Bold";
+  }
+}

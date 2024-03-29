@@ -1,0 +1,77 @@
+@use "./variables/global" as *;
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+%head {
+  width: 100%;
+  padding: $navHeight 0;
+  background-color: $grey-8;
+}
+%contents {
+  width: 100%;
+}
+%wrapper {
+  @include flex-variant(flex, $direction: column, $align: center, $gap: 7.5rem);
+}
+%categoryWrapper {
+  @include flex-variant(
+    flex,
+    $direction: column,
+    $align: center,
+    $gap: 1.6875rem
+  );
+}
+%categoryItems {
+  width: 100%;
+  @include flex-variant(
+    flex,
+    $direction: column,
+    $align: center,
+    $gap: 4.5625rem
+  );
+}
+%projectHead {
+  width: 100%;
+  padding: 5.625rem;
+  position: relative;
+  @include flex-row-center();
+}
+%projectHeadImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  object-fit: cover;
+}
+%projectHeadOverlay {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: $ovelay;
+}
+%contactMethod {
+  @include flex-variant(flex, $direction: row, $gap: 0.625rem);
+  &:first-of-type {
+    letter-spacing: 0.125rem;
+  }
+  &:last-of-type {
+    text-transform: capitalize;
+  }
+}
+%contactMethodIcon {
+  font-size: 1.5rem;
+  @include flex-variant(flex, $direction: row, $justify: center);
+}
+%contactMethodValue {
+  font-size: 1.125rem;
+  font-family: "DMSans-Regular";
+  &.ar {
+    font-family: "Cairo-Regular";
+  }
+}

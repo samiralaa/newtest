@@ -1,0 +1,57 @@
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+@use "./variables/global" as *;
+@use "./placeholders" as *;
+.categoryItems {
+  .head {
+    @extend %head;
+    .contents {
+      @extend %contents;
+      .wrapper {
+        @extend %categoryWrapper;
+        .items {
+          @extend %categoryItems;
+          .projectHead {
+            @extend %projectHead;
+            img {
+              @extend %projectHeadImg;
+            }
+            &::before {
+              @extend %projectHeadOverlay;
+            }
+          }
+          .details {
+            @include flex-variant(flex, $direction: column, $gap: 3.875rem);
+            .address {
+              @include flex-variant(
+                flex,
+                $direction: row,
+                $align: center,
+                $justify: space-between
+              );
+              text-transform: capitalize;
+            }
+            .addressText {
+              width: calc(100% / 2);
+              @include flex-variant(flex, $direction: column, $gap: 0.375rem);
+              .text {
+                font-size: 1.5rem;
+                color: $grey-3;
+                font-family: "Montserrat-SemiBold";
+              }
+              &.ar {
+                .text {
+                  font-family: "Cairo-SemiBold";
+                }
+              }
+            }
+            .description {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

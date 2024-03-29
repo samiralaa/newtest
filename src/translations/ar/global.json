@@ -1,0 +1,92 @@
+{
+  "navBar": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "projects": "المنتجات",
+    "careers": "الوظائف",
+    "contactUs": "تواصل معنا",
+    "Social": "وسائل التواصل"
+  },
+  "homePage": {
+    "welcome": "مرحبا في عالم الإبتكار",
+    "history": "تأسست عام 1999 بهدف أن تصبح واحدة من شركات التصميم الداخلي الرائدة في مصر والشرق الأوسط"
+  },
+  "missions": {
+    "ourMissions": "رسالتنا",
+    "ourVision": "رؤيتنا",
+    "ourValue": "قيمنا",
+    "missionDescription": "لماذا تضحي بالجودة بينما يمكنك الحصول على كل ما حلمت به مع شركة LIXIR Ltd. انسَ المرور بالمتاعب. استرخي ودعنا نتولى الأمر!",
+    "visionDescription": "تقدم شركة LIXIR Ltd لعملائها خدمات رائعة تجمع كل ما يحتاجه الفرد في مكان واحد.",
+    "valueDescription": "يعتمد الإتقان على مبدأ \"الإبداع\" في تعاون تصميمنا ضمن فريق الإلتزام بالتميز."
+  },
+  "services": {
+    "ourServices": "خدماتنا",
+    "consultancy": "استشارات",
+    "interiorDesign": "تصميم داخلي",
+    "furniture": "أثاث",
+    "architecting": "هندسة معمارية",
+    "landscape": ""
+  },
+  "latestProjects": "أحدث المنتجات",
+  "clients": {
+    "title": "عملاء ذو قيمة",
+    "regional": "إقليمي",
+    "local": "محلي",
+    "keyProjects": "المشاريع الرئيسية"
+  },
+  "footer": {
+    "readyToGetStarted": "جاهز للبدء؟",
+    "getStarted": "ابدأ الان",
+    "ourLocation": "موقعنا",
+    "location": "41 حدائق هليوبوليس, شيراتون هليوبوليس, النزهة, القاهرة, مصر"
+  },
+  "aboutPage": {
+    "title": "عنا",
+    "history": "تاريخنا"
+  },
+  "interiorDesignPage": {
+    "title": "تصميم داخلي"
+  },
+  "furniture": {
+    "title": "أثاث"
+  },
+  "categories": {
+    "villa": "فلل",
+    "doplex": "دوبليكس",
+    "studios": "ستوديو"
+  },
+  "categoryItem": {
+    "projectRef": "مرجع المشروع",
+    "location": "الموقع",
+    "scope": "المنطقة",
+    "description": "الوصف"
+  },
+  "contactUs": {
+    "title": "تواصل معنا",
+    "apply": "قدّم لهذه الوظيفه",
+    "name": "الإسم",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم المحمول",
+    "message": "الرسالة",
+    "send": "إرسال",
+    "getInTouch": "تواصل معنا",
+    "contactInformation": "معلومات التواصل",
+    "nameIsRequired": "يجب إدخال الإسم",
+    "emailIsRequired": "يجب إدخال البريد الإلكتروني",
+    "invalidEmail": "البريد الإلكتروني غير صحيح",
+    "phoneIsRequired": "يجب إدخال رقم المحمول",
+    "messageIsRequired": "يجب إدخال الرسالة",
+    "resumeIsRequired": "يجب إدخال السيرة الذاتية",
+    "submitting": "إرسال..."
+  },
+  "Careers": {
+    "header": "ابدأ في القيام بالعمل المهم.",
+    "des": "فلسفتنا بسيطة - قم بتوظيف فريق من الأشخاص المتنوعين والمتحمسين وتعزيز الثقافة التي تمكنك من القيام بأفضل أعمالك"
+  },
+  "loadMore": "المزيد",
+  "currency":"السعر",
+  "title":"العنوان",
+  "description": "الوصف",
+  "Girth":"المقاسات",
+  "refcode":"الكود المرجعي"
+}

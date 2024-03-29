@@ -1,0 +1,152 @@
+@use "./variables/colors" as *;
+@use "./mixins" as *;
+@use "./fonts" as *;
+@use "./variables/global" as *;
+@use "./variables/mediaQuery" as *;
+@use "./placeholders" as *;
+%width{
+  width: 85%;
+  @include mediaQuery($XlargeScreen_min_width) {
+    & {
+      width: calc((100% - 2.75rem) / 2);
+    }
+  }
+}
+.landing {
+  width: 100%;
+  background-color: $grey-2;
+  overflow: hidden;
+  .vector {
+    height: 53.5625rem;
+    position: absolute;
+    left: 19.4375rem;
+    top: -12.125rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .content {
+    width: 100%;
+    min-height: $headHeight;
+    margin-top: $navHeight;
+    margin-bottom: $navHeight;
+    position: relative;
+    z-index: 999;
+    @include flex-variant(
+      flex,
+      $direction: column,
+      $align: center,
+      $gap: 2.75rem
+    );
+    @include mediaQuery($XlargeScreen_min_width) {
+      & {
+        flex-direction: row;
+        margin-bottom: 0;
+      }
+    }
+    .items {
+      height: 100%;
+      @extend %width;
+      padding: 0 2.75rem;
+      @include flex-variant(
+        flex,
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 1.5rem
+      );
+      @include mediaQuery($XlargeScreen_min_width) {
+        & {
+          padding: 0 2.75rem 0 6.3125rem;
+        }
+      }
+      .img {
+        width: 11.875rem;
+        height: 18.125rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .text {
+        @include flex-variant(
+          flex,
+          $direction: column,
+          $justify: center,
+          $gap: 1.5rem
+        );
+        text-align: center;
+        @include mediaQuery($XlargeScreen_min_width) {
+          & {
+            text-align: start;
+          }
+        }
+        .welcome {
+          color: $black-3;
+          font-size: 2.5rem; //3.625rem
+          font-family: "Montserrat-Regular";
+          letter-spacing: -0.047125rem;
+          &:first-letter {
+            text-transform: capitalize;
+          }
+          &.ar {
+            font-family: "Cairo-Regular";
+          }
+        }
+        .history {
+          width: 100%;
+          color: $grey-3;
+          // font-size: 1.125rem;
+          font-family: "Montserrat-Light";
+          line-height: 1.75rem;
+          &.ar {
+            font-family: "Cairo-Light";
+          }
+          @include mediaQuery($XlargeScreen_min_width) {
+            & {
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+    .landingImg {
+      min-height: 60vh;
+      @extend %width;
+      background-image: url("/landing.png");
+      background-position: 50% 50%;
+      @include mediaQuery($XlargeScreen_min_width) {
+        & {
+          min-height: 100vh;
+        }
+      }
+    }
+    .landingImg2 {
+      min-height: 60vh;
+      @extend %width;
+      background-image: url("/landing2.jpg");
+      background-position: 50% 50%;
+      @include mediaQuery($XlargeScreen_min_width) {
+        & {
+          min-height: 100vh;
+        }
+      }
+    }
+    .landingImg3 {
+      min-height: 60vh;
+      @extend %width;
+      background-image: url("/landing3.jpg");
+      background-position: 50% 50%;
+      @include mediaQuery($XlargeScreen_min_width) {
+        & {
+          min-height: 100vh;
+        }
+      }
+    }
+  }
+}
+
+

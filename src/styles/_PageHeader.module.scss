@@ -1,0 +1,12 @@
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+.head {
+  color: $black-2;
+  font-size: 4.0625rem;
+  font-family: "Montserrat-Bold";
+  text-align: center;
+  text-transform: capitalize;
+  &.ar {
+    font-family: "Cairo-Bold";
+  }
+}

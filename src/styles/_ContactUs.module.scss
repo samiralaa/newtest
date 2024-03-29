@@ -1,0 +1,128 @@
+@use "./variables/global" as *;
+@use "./mixins" as *;
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+@use "./placeholders" as *;
+%item {
+  width: 100%;
+  text-align: center;
+  @include mediaQuery($smallScreen_min_width) {
+    & {
+      width: 70%;
+    }
+  }
+  @include mediaQuery($medScreen_min_width) {
+    & {
+      width: calc((100% - $gap) / 2);
+      text-align: start;
+    }
+  }
+}
+.contactUs {
+  .head {
+    @extend %head;
+    .contents {
+      @extend %contents;
+      .wrapper {
+        @extend %wrapper;
+        .details {
+          width: 100%;
+          @include flex-variant(
+            flex,
+            $direction: row,
+            $justify: center,
+            $wrap: wrap,
+            $gap: 3.25rem
+          );
+          @include mediaQuery($medScreen_min_width) {
+            & {
+              justify-content: space-between;
+              flex-wrap: nowrap;
+            }
+          }
+          .formWrapper {
+            @extend %item;
+            .form {
+              width: 100%;
+              @include flex-variant(flex, $direction: column, $gap: $gap);
+
+              .inputWrapper {
+                width: 100%;
+                @include flex-variant(flex, $direction: column, $gap: 0.5rem);
+                .input {
+                  width: 100%;
+                  padding: 0.75rem 1rem;
+                  font-size: 1rem;
+                  font-family: "DMSans-Regular";
+                  border-radius: 0.25rem;
+                  border: 0.0625rem solid $grey-1;
+                  &::placeholder {
+                    text-transform: capitalize;
+                  }
+                  &.ar {
+                    font-family: "Cairo-Regular";
+                  }
+                }
+                textarea {
+                  resize: none;
+                }
+                .error {
+                  margin: 0 0.5rem;
+                  color: $red-1;
+                  font-size: 1rem;
+                  font-family: "DMSans-Regular";
+                  text-transform: capitalize;
+                }
+              }
+
+              .submit {
+                padding: 0.9375rem 1.5rem;
+                background-color: $yellow-1;
+                color: $white-1;
+                font-size: 1rem;
+                font-family: "Montserrat-Medium";
+                text-transform: uppercase;
+                transition: $tr-1;
+                &:hover {
+                  background-color: $yellow-2;
+                }
+                &.ar {
+                  font-family: "Cairo-Medium";
+                }
+              }
+            }
+          }
+          .contactInfo {
+            @extend %item;
+            .contactMethods {
+              @include flex-variant(
+                flex,
+                $direction: column,
+                $align: center,
+                $gap: 1.5rem
+              );
+              @include mediaQuery($medScreen_min_width) {
+                & {
+                  align-items: flex-start;
+                }
+              }
+              .method {
+                @extend %contactMethod;
+                .icon {
+                  @extend %contactMethodIcon;
+                }
+                .value {
+                  @extend %contactMethodValue;
+                }
+              }
+            }
+          }
+          .header {
+            color: $black-2;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "./variables/colors" as *;
+@use "./mixins" as *;
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  @include flex-row-center();
+  background-color: $white-1;
+  .spinner {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    &::after {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      margin: 0.5rem;
+      border-radius: 50%;
+      border: 0.375rem solid $yellow-1;
+      border-color: $yellow-1 transparent $yellow-1 transparent;
+      animation: spin 1.2s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

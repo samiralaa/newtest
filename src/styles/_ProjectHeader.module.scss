@@ -1,0 +1,11 @@
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+.header {
+  color: $grey-10;
+  font-family: "Montserrat-Bold";
+  font-size: 2rem;
+  text-transform: capitalize;
+  &.ar {
+    font-family: "Cairo-Bold";
+  }
+}

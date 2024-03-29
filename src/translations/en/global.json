@@ -1,0 +1,93 @@
+{
+  "navBar": {
+    "home": "home",
+    "about": "about us",
+    "projects": "Products",
+    "careers": "careers",
+    "contactUs": "contact us",
+    "Social": "Social Media"
+  },
+  "homePage": {
+    "welcome": "welcome to the world of innovation",
+    "history": "Established in 1999 with the vision of being one of the premier Interior Design houses in Egypt & Middle East"
+  },
+  "missions": {
+    "ourMissions": "our mission",
+    "ourVision": "our vision",
+    "ourValue": "our value",
+    "missionDescription": "why sacrifice quality when you can get all what you have dreamed of with LIXIR Ltd. Forget going through the hassles. Relax and let us take over!",
+    "visionDescription": "LIXIR Ltd. offers its clients with exquisite services that combine all what an individual need in one place.",
+    "valueDescription": "Mastery is based on the principle of “creativity” in our design’s collaboration within the commitment team of excellence."
+  },
+  "services": {
+    "ourServices": "our services",
+    "consultancy": "consultancy",
+    "interiorDesign": "interior design",
+    "furniture": "furniture",
+    "architecting": "architecting",
+    "landscape": "landscape"
+  },
+  "latestProjects": "latest Products",
+  "clients": {
+    "title": "valuable clients",
+    "regional": "regional",
+    "local": "local",
+    "keyProjects": "key Products"
+  },
+  "footer": {
+    "readyToGetStarted": "ready to get started?",
+    "getStarted": "get started",
+    "ourLocation": "our location",
+    "location": "41 heliopolis gardens, sheraton el helioplies al nozha, cairo, egypt"
+  },
+  "aboutPage": {
+    "title": "about us",
+    "history": "history"
+  },
+  "interiorDesignPage": {
+    "title": "interior design"
+  },
+  "furniture": {
+    "title": "furniture"
+  },
+  "categories": {
+    "villa": "villa",
+    "doplex": "doplex",
+    "studios": "studios"
+  },
+  "categoryItem": {
+    "projectRef": "project ref",
+    "location": "location",
+    "Girth": "Girth",
+    "description": "description"
+  },
+  "contactUs": {
+    "title": "contact us",
+    "apply": "apply for this jop",
+    "name": "name",
+    "email": "email address",
+    "phone": "phone number",
+    "message": "message",
+    "send": "send",
+    "getInTouch": "get in touch",
+    "contactInformation": "contact information",
+    "nameIsRequired": "name must be entered",
+    "emailIsRequired": "email is required",
+    "invalidEmail": "invalid email",
+    "phoneIsRequired": "phone is required",
+    "messageIsRequired": "message is required",
+    "resumeIsRequired": "resume is required",
+    "submitting": "submitting..."
+  },
+  "Careers": {
+    "header": "Start doing work that matters",
+    "des": "Our philosophy is simple -- hire a team of diverse, passionate people and foster a culture that empowers you to do your best work"
+  },
+  "loadMore": "load more",
+  "currency":"Price",
+  "title":"Title",
+  "description":"Description",
+  "Girth":"Girth",
+  "refcode":"Ref code"
+  
+}

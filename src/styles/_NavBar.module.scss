@@ -1,0 +1,125 @@
+@use "./mixins" as *;
+@use "./variables/global" as *;
+@use "./variables/colors" as *;
+@use "./variables/mediaQuery" as *;
+.header {
+  width: 100%;
+  max-width: 100%;
+  height: $navHeight;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: $tr-1;
+  &.scroll {
+    position: fixed;
+    background-color: $grey-2;
+    box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  }
+  .navbar {
+    height: 100%;
+    @include flex-variant(
+      flex,
+      $direction: row,
+      $align: center,
+      $justify: space-between
+    );
+    .logo {
+      width: 8.25rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .toggler {
+      @include flex-variant(
+        flex,
+        $direction: column,
+        $align: center,
+        $justify: center,
+        $gap: 0.25rem
+      );
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        span {
+          background-color: $yellow-1;
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          display: none !important;
+        }
+      }
+      span {
+        width: 2rem;
+        height: 0.25rem;
+        display: block;
+        background-color: $black-3;
+        border-radius: 0.3125rem;
+        transition: 0.3s;
+      }
+    }
+    .overlay {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: none;
+      background-color: $ovelay;
+      &.show {
+        display: block;
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          display: none !important;
+        }
+      }
+    }
+    .collapse {
+      @include mediaQuery($medScreen_max_width) {
+        & {
+          height: 100vh;
+          padding: 1.5rem 3rem;
+          position: fixed;
+          right: -100%;
+          @include flex-variant(flex, $direction: column, $align: flex-end);
+          top: 0;
+          z-index: 10000;
+          background-color: $white-1;
+          transition: $tr-1;
+          &.ar {
+            right: initial;
+            left: -100%;
+          }
+          &.opened {
+            right: 0;
+            &.ar {
+              right: initial;
+              left: 0;
+            }
+            .close {
+              @include flex-variant(
+                flex,
+                $direction: row,
+                $align: center,
+                $justify: center
+              );
+            }
+          }
+        }
+      }
+      .close {
+        margin-bottom: 1rem;
+        display: none;
+        font-size: 2.75rem;
+        transition: $tr-1;
+        &:hover {
+          color: $yellow-1;
+        }
+      }
+    }
+  }
+}

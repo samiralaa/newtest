@@ -1,0 +1,96 @@
+// _UpdateData.module.scss
+
+.categories {
+  margin: 10px auto; /* Center the container horizontally */
+  max-width: 1000px; /* Set maximum width */
+}
+.datacontact{
+ margin:50px;
+      text-transform: capitalize;
+      &.ar {
+        font-family: "Cairo-Bold";
+      }
+}
+.productContainer {
+  max-width: 1000px; /* Set maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.buyNowButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #45a049; /* Darker Green */
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4cm;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.image {
+  width: 100%;
+height: 500px;
+}
+
+.details {
+  width: 100%;
+  padding: 30px;
+  height: auto;
+  font-family: 'Cairo-Bold';
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .info {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > div {
+      flex-basis: calc(33.333% - 20px);
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 1024px) {
+        flex-basis: calc(50% - 20px);
+        margin-top: 10px;
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-basis: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// Add additional styling for the glitch button if needed

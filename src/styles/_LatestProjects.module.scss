@@ -1,0 +1,103 @@
+@use "./variables/colors" as *;
+@use "./variables/global" as *;
+@use "./mixins" as *;
+@use "./fonts" as *;
+@use "./variables/mediaQuery" as *;
+$listGap: 5.375rem;
+$borderRadius: 1.125rem;
+%pesudoElement {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: $borderRadius;
+}
+.latestProjects {
+  padding: $sectionPadding;
+  padding-top: 0;
+  background-color: $grey-2;
+  .sectionTitle {
+    color: $black-2;
+  }
+  .projectsList {
+    @include flex-variant(
+      flex,
+      $direction: row,
+      $align: center,
+      $justify: center,
+      $gap: $listGap,
+      $wrap: wrap
+    );
+    @include mediaQuery($medScreen_min_width) {
+      & {
+        justify-content: flex-start;
+      }
+    }
+    li {
+      width: 80%;
+      @include flex-variant(
+        flex,
+        $direction: column,
+        $align: center,
+        $gap: 2.5rem
+      );
+      @include mediaQuery($smallScreen_min_width) {
+        & {
+          width: 90%;
+        }
+      }
+      @include mediaQuery($medScreen_min_width) {
+        & {
+          width: calc((100% - $listGap) / 2);
+        }
+      }
+      @include mediaQuery($largeScreen_min_width) {
+        & {
+          width: calc((100% - ($listGap * 2)) / 3);
+        }
+      }
+      .img {
+        width: 100%;
+        height: 15.625rem;
+        position: relative;
+        z-index: 100;
+        &::before {
+          @extend %pesudoElement;
+          background-color: $grey-4;
+          z-index: 99;
+        }
+        &::after {
+          @extend %pesudoElement;
+          background-color: $yellow-1;
+          transform: rotate(5.9deg);
+          z-index: 98;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: 100;
+          border-radius: $borderRadius;
+          transform: rotate(-5.26deg);
+        }
+        .imgWrapper {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+        }
+      }
+      .title {
+        color: $black-2;
+        font-size: 1.75rem;
+        font-family: "Montserrat-SemiBold";
+        text-transform: capitalize;
+        &.ar {
+          font-family: "Cairo-SemiBold";
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use "./variables/colors" as *;
+@use "./fonts" as *;
+.header {
+  position: relative;
+  z-index: 999;
+  color: $white-1;
+  font-size: 4.0625rem;
+  font-family: "Montserrat-Bold";
+  text-transform: capitalize;
+  &.ar {
+    font-family: "Cairo-Bold";
+  }
+}

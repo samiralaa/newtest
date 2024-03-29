@@ -1,0 +1,169 @@
+@use "./variables/colors" as *;
+@use "./variables/global" as *;
+@use "./mixins" as *;
+@use "./fonts" as *;
+@use "./variables/mediaQuery" as *;
+@use "./placeholders" as *;
+
+.welcome {
+    color: $black-4;
+    margin-top: 40px;
+    font-size: 2.5rem; //3.625rem
+    font-family: "Montserrat-Regular";
+    letter-spacing: -0.047125rem;
+    &:first-letter {
+      text-transform: capitalize;
+    }
+    &.ar {
+      font-family: "Cairo-Regular";
+    }
+  }
+  .history {
+    color: $black-3;
+    font-family: "Montserrat-Light";
+    line-height: 1.75rem;
+    margin-top: 15px;
+    margin-bottom: 4rem;
+    &.ar {
+      font-family: "Cairo-Light";
+    }
+    @include mediaQuery($XlargeScreen_min_width) {
+      & {
+        width: 70%;
+      }
+    }
+  }
+
+  .card {
+    border:1px solid $grey-1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px $yellow-1;
+    padding: 20px;
+    font-family: "Montserrat-Light";
+    line-height: 1.75rem;
+    letter-spacing: -0.047125rem;
+    margin-bottom: 1.5rem;
+
+    &.ar {
+      font-family: "Cairo-Light";
+    }
+    .title{
+      margin-bottom: 1.1rem;
+    }
+  }
+
+  .details {
+    padding: 1.25rem 0;
+    flex-grow: 1;
+    .title {
+      margin-bottom: 1.25rem;
+      color: $white-1;
+      font-family: "Montserrat-Bold";
+      text-transform: capitalize;
+      &.ar {
+        font-family: "Cairo-Bold";
+      }
+    }
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border-radius: 1em; 
+    background-color: $grey-2; 
+    color: $black-4; 
+    font-weight: 600; 
+    margin-left: 0.5em; 
+    font-family: "Montserrat-Bold";
+    text-transform: capitalize;
+    &.ar {
+      font-family: "Cairo-Bold";
+    }
+  }
+
+  .detailsList {
+    margin-left: 1.25rem;
+    margin-bottom: 1.5rem;
+    @include flex-variant(flex, $direction: column, $gap: 0.5rem);
+    list-style: disc;
+    &.ar {
+      margin-left: 0;
+      margin-right: 1.25rem;
+    }
+    .item {
+      font-family: "Montserrat-Light";
+      font-size: 1.1rem;
+      &.ar {
+        font-family: "Cairo-SemiBold";
+      }
+    }
+  }
+h2{
+  color: #000000;
+}
+  .copyright {
+    font-family: Arial, sans-serif; 
+    font-size: 1rem; 
+    color: #333; 
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+    list-style: none;
+    position: relative;
+    top: -80px;
+    font-family: "Montserrat-Bold";
+    text-transform: capitalize;
+    &.ar {
+      font-family: "Cairo-Bold";
+    }
+  
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      cursor: pointer;
+      font-family: "Montserrat-Bold";
+      text-transform: capitalize;
+      &.ar {
+        font-family: "Cairo-Bold";
+      }
+  
+      &.active {
+        font-weight: bold;
+      }
+  
+      a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px 15px;
+        border: 1px solid $yellow-2;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #dcdcdc;
+        }
+      }
+    }
+  }
+
+  .applyButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .applyButton:hover {
+    background-color: #45a049;
+  }
