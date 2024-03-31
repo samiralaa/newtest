@@ -62,7 +62,7 @@ const Projects = () => {
                         >
                           {i18n.language === "ar"
                             ? "مدونه"
-                            : "note"}
+                            : "interior design"}
                         </p>
                       </Link>
                  

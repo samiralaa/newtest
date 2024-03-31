@@ -17,7 +17,7 @@ const LinkList = ({ setHandler }) => {
       label: "AboutUs Page",
     },
     {
-      url: "/Projects",
+      url: "/all/project",
       title: t("navBar.projects"),
       label: "Projects Page",
     },
