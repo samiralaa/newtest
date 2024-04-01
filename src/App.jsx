@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const Projects = lazy(() => import("./pages/Projects"));
-const Category = lazy(() => import("./pages/Category"));
+
 const AllProjects = lazy(() => import("./pages/AllProjects"));
 const Careers = lazy(() => import("./pages/Careers"));
 const JobApply = lazy(() => import("./pages/JobApply"));
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         path: "Projects/:category",
         element: (
           <Suspense fallback={<Loading />}>
-            <Category />
+            <CategoryItems />
           </Suspense>
         ),
         errorElement: <p>error</p>,
@@ -86,31 +86,16 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "Projects/:category/:categoryName",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <CategoryItems />
-          </Suspense>
-        ),
-        errorElement: <p>error</p>,
-        loader: ({ params }) =>
-          import("./pages/CategoryItems").then((module) =>
-            module.loader({ params })
-          ),
-      },
-      {
-        path: "Projects/:category/:categoryName/:itemId",
+        path: "AllProjects",
         element: (
           <Suspense fallback={<Loading />}>
             <CategoryItem />
           </Suspense>
         ),
+        loader: () =>
+          import("./pages/AboutUs").then((module) => module.loader()),
         errorElement: <p>error</p>,
-        loader: ({ params }) =>
-          import("./pages/CategoryItem").then((module) =>
-            module.loader({ params })
-          ),
-      },
+      },    
       {
         path: "Careers",
         element: (
